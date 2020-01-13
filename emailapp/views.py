@@ -10,7 +10,7 @@ def mail(request):
     if request.method=='POST':
         form=mailForm(request.POST)
         if form.is_valid():
-            from_email = 'isyber.projects@gmail.com'
+            from_email = 'YOUR-EMAIL@gmail.com' #Sender Email That you config in setting.py
             to = str(form['to'].value())
             subject=str(form['subject'].value())
             text_content = 'Test Your Mail Program'
@@ -33,8 +33,8 @@ def demoEmail(request):
     send_mail(
         'Subject here',
         'Here is the message.',
-        'isyber.projects@gmail.com',
-        ['sudhansukumar945@gmail.com'],
+        'YOUR-Mail@gmail.com',   #Sender Email
+        ['sudhansukumar945@gmail.com'], #To Receiver Email
         fail_silently=False,
     )
     messages.success(request, 'Profile details updated.')
